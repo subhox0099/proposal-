@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Accept?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="headline">Will You Accept My Proposal?</h1>
+        <div class="buttons">
+            <button class="btn yes" onclick="showMessage('yes')">Yes</button>
+            <button class="btn no" id="no-btn">No</button>
+        </div>
+        <div id="message" class="message hidden"></div>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById('no-btn');
+
+        // Add event listener to move the "No" button on hover
+        noBtn.addEventListener('mouseover', () => {
+            const container = document.querySelector('.container');
+            const maxX = container.offsetWidth - noBtn.offsetWidth;
+            const maxY = container.offsetHeight - noBtn.offsetHeight;
+
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = `${randomX}px`;
+            noBtn.style.top = `${randomY}px`;
+        });
+
+        function showMessage(answer) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.classList.remove('hidden');
+            if (answer === 'yes') {
+                messageDiv.innerHTML = '🎉 Yay! Thank you for saying YES! 🎉';
+                messageDiv.style.color = 'green';
+            }
+        }
+    </script>
+</body>
+</html>

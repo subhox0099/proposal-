@@ -1,0 +1,77 @@
+/* General Reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; /* Prevent scrolling when the button moves */
+}
+
+/* Container Styling */
+.container {
+  text-align: center;
+  background: white;
+  padding: 30px 50px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Headline */
+.headline {
+  font-size: 2em;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+.buttons .btn {
+  font-size: 1.2em;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.btn.yes {
+  background-color: #4caf50;
+  color: white;
+}
+
+.btn.no {
+  background-color: #f44336;
+  color: white;
+  position: relative;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+/* Hidden Message */
+.hidden {
+  display: none;
+}
+
+/* Message Styling */
+.message {
+  font-size: 1.5em;
+  margin-top: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
